@@ -6,7 +6,7 @@ setInterval(() => {
 }, 1000);
 
 // โหลดเสียงเอฟเฟกต์ windows xp error เล่นทันที (ถ้าเล่นไม่ได้ก็ไม่แสดง error)
-const audio = new Audio("https://github.com/Pai2009/don-t-click/tree/main/music/windows-xp-error.mp3");
+const audio = new Audio("https://pai2009.github.io/don-t-click/music/windows-xp-error.mp3");
 audio.play().catch(() => {});
 
 // ถามชื่อเหยื่อผ่าน prompt เอาไปแสดงในข้อความในเกม hackingMessages
@@ -76,10 +76,10 @@ function showRickroll() {
   // แทนที่เนื้อหาทั้งหมดใน body ด้วย audio + vdo Rickroll
   document.body.innerHTML = `
     <audio autoplay>
-      <source src="https://github.com/Pai2009/don-t-click/tree/main/music/troll-laugh.mp3" type="audio/mpeg">
+      <source src="https://pai2009.github.io/don-t-click/music/troll-laugh.mp3" type="audio/mpeg">
     </audio>
     <video autoplay controls>
-      <source src="https://github.com/Pai2009/don-t-click/tree/main/music/rickroll.mp4" type="video/mp4">
+      <source src="https://pai2009.github.io/don-t-click/music/rickroll.mp4" type="video/mp4">
       คลิปไม่โหลดเว้ยเพื่อน ลองใหม่ดิ
     </video>
   `;
