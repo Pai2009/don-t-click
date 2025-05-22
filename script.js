@@ -1,4 +1,3 @@
-// เอา element ที่จะแสดงเวลาในหน้าเว็บมาเก็บไว้ในตัวแปร timeSpan
 const timeSpan = document.getElementById("time");
 
 // อัพเดทเวลาในหน้าเว็บทุกๆ 1 วิ ด้วยเวลาปัจจุบัน
@@ -7,11 +6,8 @@ setInterval(() => {
 }, 1000);
 
 // โหลดเสียงเอฟเฟกต์ windows xp error เล่นทันที (ถ้าเล่นไม่ได้ก็ไม่แสดง error)
-document.addEventListener("click", () => {
-  const audio = new Audio("https://files.catbox.moe/6sx208.mp3");
-  audio.play().catch(() => {});
-});
-
+const audio = new Audio("/music/windows-xp-error.mp3");
+audio.play().catch(() => {});
 
 // ถามชื่อเหยื่อผ่าน prompt เอาไปแสดงในข้อความในเกม hackingMessages
 const victimName = prompt("กรอกชื่อจริงเพื่อเข้าสู่ระบบ:");
@@ -72,18 +68,18 @@ function showRickroll() {
   document.title = "แม่กูไม่อยู่บ้าน"; // เปลี่ยนชื่อแท็บเว็บ
 
   // เปลี่ยนพื้นหลังเป็นรูป Meme
-  document.body.style.backgroundImage = "url('')";
+  document.body.style.backgroundImage = "url('https://i.imgflip.com/7tx9eh.jpg')";
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center";
   document.body.style.backgroundRepeat = "no-repeat";
 
   // แทนที่เนื้อหาทั้งหมดใน body ด้วย audio + vdo Rickroll
-   document.body.innerHTML = `
+  document.body.innerHTML = `
     <audio autoplay>
-      <source src="https://files.catbox.moe/cs4312.mp3" type="audio/mpeg">
+      <source src="/music/troll-laugh.mp3" type="audio/mpeg">
     </audio>
     <video autoplay controls>
-      <source src="https://files.catbox.moe/ugwq6c.mp4" type="video/mp4">
+      <source src="/music/rickroll.mp4" type="video/mp4">
       คลิปไม่โหลดเว้ยเพื่อน ลองใหม่ดิ
     </video>
   `;
