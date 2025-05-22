@@ -6,10 +6,8 @@ setInterval(() => {
 }, 1000);
 
 // โหลดเสียงเอฟเฟกต์ windows xp error ทุกครั้งที่คลิก (ใช้ลิงก์เต็ม)
-document.addEventListener("click", () => {
-  const audio = new Audio("https://pai2009.github.io/don-t-click/music/windows-xp-error.mp3");
-  audio.play().catch(() => {});
-});
+const audio = new Audio("/music/windows-xp-error.mp3");
+audio.play().catch(() => {});
 
 // ถามชื่อเหยื่อผ่าน prompt เอาไปแสดงในข้อความในเกม hackingMessages
 const victimName = prompt("กรอกชื่อจริงเพื่อเข้าสู่ระบบ:");
@@ -59,21 +57,20 @@ function startEarthquake() {
 
 function showRickroll() {
   document.title = "แม่กูไม่อยู่บ้าน";
-
   document.body.style.backgroundImage = "";
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center";
   document.body.style.backgroundRepeat = "no-repeat";
 
   document.body.innerHTML = `
-    <audio autoplay>
-      <source src="https://pai2009.github.io/don-t-click/music/troll-laugh.mp3" type="audio/mpeg">
-    </audio>
-    <video autoplay controls>
-      <source src="https://pai2009.github.io/don-t-click/music/rickroll.mp4" type="video/mp4">
-      คลิปไม่โหลดเว้ยเพื่อน ลองใหม่ดิ
-    </video>
-  `;
+     <audio autoplay>
+       <source src="/music/troll-laugh.mp3" type="audio/mpeg">
+     </audio>
+     <video autoplay controls>
+       <source src="/music/rickroll.mp4" type="video/mp4">
+       คลิปไม่โหลดเว้ยเพื่อน ลองใหม่ดิ
+     </video>
+   `;
 
   setInterval(() => {
     const emojis = ["🤣", "😂", "🫠", "😈", "💀", "🤡", "🎵", "🎶"];
