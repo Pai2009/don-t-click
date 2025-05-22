@@ -1,0 +1,104 @@
+/* ตั้งค่าให้ html กับ body ไม่มี margin กับ padding ให้เต็มจอ */
+/* ปิดการเลื่อนหน้าจอ (overflow: hidden) ไม่ให้เลื่อน */
+/* พื้นหลังดำตัวหนังสือสีเขียวแบบจอแฮ็กเกอร์คลาสสิก */
+/* ใช้ฟอนต์ Courier New */
+/* ใช้ flexbox จัดเนื้อหาให้อยู่กลางจอทั้งแนวตั้งแนวนอน */
+/* ความสูงเต็มจอ 100vh */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  color: lime;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* หัวข้อ h1 ตัวใหญ่ 3 เท่าของขนาดปกติ */
+/* ใส่ animation สั่น ๆ แบบสั่น */
+/* เว้นขอบล่างนิดนึงให้ไม่ติดปุ่ม */
+h1 {
+  font-size: 3em;
+  animation: shakeTitle 0.3s infinite;
+  margin-bottom: 20px;
+}
+
+/* ปุ่มสีแดง ตัวหนังสือขาว */
+/* ใส่ padding */
+/* ฟอนต์ใหญ่ */
+/* ไม่มีเส้นขอบ มีมุมมนเล็กน้อย */
+button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+}
+
+/* เวลาเอาเมาส์ชี้ปุ่ม เปลี่ยนเป็นสีแดงเข้มขึ้นอีกนิด */
+button:hover {
+  background-color: darkred;
+}
+
+/* #hacking คือช่องแสดงข้อความ hack */
+/* เว้นบรรทัดบนเล็กน้อย */
+/* ให้ข้อความคงรูปและตัดบรรทัดตามที่กำหนด */
+/* ขนาดฟอนต์เล็กลงนิดนึง สีเขียวแบบสด ๆ */
+/* ตัวหนังสือจัดกลาง */
+#hacking {
+  margin-top: 20px;
+  white-space: pre-wrap;
+  font-size: 0.9em;
+  color: #00FF00;
+  text-align: center;
+}
+
+/* นิยาม animation สั่นแบบซ้าย-ขวา */
+/* 0% กับ 100% อยู่ตรงกลาง */
+/* 25% กับ 75% ขยับไปขวา 5px */
+/* 50% ขยับไปซ้าย 5px */
+@keyframes shakeTitle {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* คลาส emoji ที่จะลอยขึ้น */
+/* ตำแหน่ง absolute เพื่อวางตรงไหนก็ได้บนจอ */
+/* ขนาดใหญ่ 3rem */
+/* ใส่ animation ให้ลอยขึ้นแบบ smooth */
+/* pointer-events none เพื่อไม่ให้ขวางการคลิก */
+.emoji {
+  position: absolute;
+  font-size: 3rem;
+  animation: floatUp 8s linear infinite;
+  pointer-events: none;
+}
+
+/* animation ให้ emoji ลอยขึ้นจากครึ่งล่างของจอ */
+/* หมุนตัวเอง 2 รอบเต็ม */
+/* ค่อย ๆ โปร่งใสจนหายไป */
+@keyframes floatUp {
+  0% {
+    transform: translateY(50vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ตั้งค่าขนาดวิดีโอให้เต็มจอ */
+/* ใช้ object-fit: cover ให้คลิปเต็มพื้นที่ไม่ผิดสัดส่วน */
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
