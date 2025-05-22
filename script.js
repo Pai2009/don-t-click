@@ -7,7 +7,7 @@ setInterval(() => {
 }, 1000);
 
 // โหลดเสียงเอฟเฟกต์ windows xp error เล่นทันที (ถ้าเล่นไม่ได้ก็ไม่แสดง error)
-const audio = new Audio("/music/windows-xp-error.mp3");
+const audio = new Audio("https://drive.google.com/file/d/1AIWGXtPmYOJTyy7iYb3JqTWDVmJUA5SA/view?usp=sharing");
 audio.play().catch(() => {});
 
 // ถามชื่อเหยื่อผ่าน prompt เอาไปแสดงในข้อความในเกม hackingMessages
@@ -69,7 +69,7 @@ function showRickroll() {
   document.title = "แม่กูไม่อยู่บ้าน"; // เปลี่ยนชื่อแท็บเว็บ
 
   // เปลี่ยนพื้นหลังเป็นรูป Meme
-  document.body.style.backgroundImage = "url('https://i.imgflip.com/7tx9eh.jpg')";
+  document.body.style.backgroundImage = "url('')";
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center";
   document.body.style.backgroundRepeat = "no-repeat";
@@ -77,10 +77,10 @@ function showRickroll() {
   // แทนที่เนื้อหาทั้งหมดใน body ด้วย audio + vdo Rickroll
   document.body.innerHTML = `
     <audio autoplay>
-      <source src="/music/troll-laugh.mp3" type="audio/mpeg">
+      <source src="https://drive.google.com/file/d/1M7rAXHR1ancm4QVAmAGupaV5iDQoMnsT/view?usp=drive_link" type="audio/mpeg">
     </audio>
     <video autoplay controls>
-      <source src="/music/rickroll.mp4" type="video/mp4">
+      <source src="/https://drive.google.com/file/d/1FEDhdkPbRWKl_Q0A_wzrJwC61vBBRXR8/view?usp=sharing" type="video/mp4">
       คลิปไม่โหลดเว้ยเพื่อน ลองใหม่ดิ
     </video>
   `;
