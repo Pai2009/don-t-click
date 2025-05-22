@@ -5,7 +5,7 @@ setInterval(() => {
   timeSpan.textContent = new Date().toLocaleString();
 }, 1000);
 
-// โหลดเสียงเอฟเฟกต์ windows xp error เล่นทันที (ถ้าเล่นไม่ได้ก็ไม่แสดง error)
+// โหลดเสียงเอฟเฟกต์ windows xp error ทุกครั้งที่คลิก (ใช้ลิงก์เต็ม)
 document.addEventListener("click", () => {
   const audio = new Audio("https://pai2009.github.io/don-t-click/music/windows-xp-error.mp3");
   audio.play().catch(() => {});
@@ -16,7 +16,7 @@ const victimName = prompt("กรอกชื่อจริงเพื่อ�
 
 // ข้อความล้อเลียนที่จะแสดงทีละบรรทัด เหมือนกำลัง hack
 const hackingMessages = [
-  `[+] ยินดีต้อนรับคุณ ${victimName}`,  // แสดงชื่อเหยื่อ
+  `[+] ยินดีต้อนรับคุณ ${victimName}`,  
   "[+] เชื่อมต่อกับ NSA...",            
   "[+] ดึง GPS ตำแหน่ง...",
   "[+] เจาะเข้าระบบ Router...",
@@ -27,36 +27,28 @@ const hackingMessages = [
   "[!] พ่อมึงตาย"                     
 ];
 
-// Function hackingMessages จะแสดงข้อความ hack ทีละบรรทัด
 function startHack() {
-  const output = document.getElementById("hacking"); // เอาพื้นที่แสดงผลมาเก็บไว้
-  output.textContent = ""; // เคลียร์ข้อความเก่า
+  const output = document.getElementById("hacking");
+  output.textContent = "";
 
   let i = 0;
-  // ตั้ง interval ให้แสดงข้อความทีละบรรทัดทุกๆ 0.8 วินาที
   const interval = setInterval(() => {
-    output.textContent += hackingMessages[i] + "\n"; // ต่อข้อความเพิ่มทีละบรรทัด
+    output.textContent += hackingMessages[i] + "\n";
     i++;
-
-    // ถ้าแสดงครบทุกข้อความแล้ว ให้หยุด interval และเริ่มสั่น
     if (i >= hackingMessages.length) {
       clearInterval(interval);
       setTimeout(() => {
         startEarthquake();
-      }, 1000); // รอ 1 วิ ก่อนจะสั่น
+      }, 1000);
     }
   }, 800);
 }
 
-// Function ทำสั่น โดยสุ่มเขย่าเว็บไปมา สั่นๆ
 function startEarthquake() {
   let quake = 0;
   const quakeInterval = setInterval(() => {
-    // สุ่มแปลกตำแหน่งของหน้าเว็บ และหมุนแบบสุ่ม
     document.body.style.transform = `translate(${Math.random()*40-20}px, ${Math.random()*40-20}px) rotate(${Math.random()*10-5}deg)`;
     quake++;
-
-    // สั่น 10 ครั้งแล้วหยุดคืนค่า style ให้เหมือนเดิมแล้วโชว์ Rickroll
     if (quake > 10) {
       clearInterval(quakeInterval);
       document.body.style.transform = "none";
@@ -65,17 +57,15 @@ function startEarthquake() {
   }, 50);
 }
 
-// Function เปลี่ยนหน้าเว็บเป็นภาพและคลิป Rickroll พร้อมเสียงหัวเราะ
 function showRickroll() {
-  document.title = "แม่กูไม่อยู่บ้าน"; // เปลี่ยนชื่อแท็บเว็บ
+  document.title = "แม่กูไม่อยู่บ้าน";
 
-  // เปลี่ยนพื้นหลังเป็นรูป Meme
-  document.body.style.backgroundImage = "url('')";
+  // ลบ backgroundImage เพราะ URL ว่างเปล่า
+  document.body.style.backgroundImage = "";
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center";
   document.body.style.backgroundRepeat = "no-repeat";
 
-  // แทนที่เนื้อหาทั้งหมดใน body ด้วย audio + vdo Rickroll
   document.body.innerHTML = `
     <audio autoplay>
       <source src="https://pai2009.github.io/don-t-click/music/troll-laugh.mp3" type="audio/mpeg">
@@ -86,21 +76,21 @@ function showRickroll() {
     </video>
   `;
 
-  // ทุก 0.3 วิ สุ่มสร้าง emoji ตกลงมาจากบนจอ แล้วหายไปหลัง 9 วิ
   setInterval(() => {
     const emojis = ["🤣", "😂", "🫠", "😈", "💀", "🤡", "🎵", "🎶"];
     const emoji = document.createElement("div");
     emoji.classList.add("emoji");
     emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    emoji.style.left = `${Math.random() * 100}vw`; // กระจายซ้ายขวาเต็มจอ
-    emoji.style.fontSize = `${Math.random() * 2 + 2}rem`; // ขนาดสุ่ม
+    emoji.style.position = "fixed";
+    emoji.style.top = "0";
+    emoji.style.left = `${Math.random() * 100}vw`;
+    emoji.style.fontSize = `${Math.random() * 2 + 2}rem`;
     document.body.appendChild(emoji);
-    setTimeout(() => emoji.remove(), 9000); // ลบ emoji หลัง 9 วิ
+    setTimeout(() => emoji.remove(), 9000);
   }, 300);
 }
 
-// เวลา user คลิกหน้าเว็บ จะมีเสียง Windows XP error ดังทุกครั้ง
-document.addEventListener("click", () => {
-  const audio = new Audio("/music/windows-xp-error.mp3");
-  audio.play().catch(() => {});
-});
+// เรียกให้มันเริ่มแสดง hack ตอนโหลดหน้า
+window.onload = () => {
+  startHack();
+};
