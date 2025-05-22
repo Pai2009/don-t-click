@@ -6,8 +6,10 @@ setInterval(() => {
 }, 1000);
 
 // โหลดเสียงเอฟเฟกต์ windows xp error ทุกครั้งที่คลิก (ใช้ลิงก์เต็ม)
-const audio = new Audio("/music/windows-xp-error.mp3");
-audio.play().catch(() => {});
+document.addEventListener("click", () => {
+  const audio = new Audio("/music/windows-xp-error.mp3");
+  audio.play().catch(() => {});
+});
 
 // ถามชื่อเหยื่อผ่าน prompt เอาไปแสดงในข้อความในเกม hackingMessages
 const victimName = prompt("กรอกชื่อจริงเพื่อเข้าสู่ระบบ:");
