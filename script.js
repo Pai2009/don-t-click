@@ -60,7 +60,6 @@ function startEarthquake() {
 function showRickroll() {
   document.title = "แม่กูไม่อยู่บ้าน";
 
-  // ลบ backgroundImage เพราะ URL ว่างเปล่า
   document.body.style.backgroundImage = "";
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center";
@@ -89,8 +88,3 @@ function showRickroll() {
     setTimeout(() => emoji.remove(), 9000);
   }, 300);
 }
-
-// เรียกให้มันเริ่มแสดง hack ตอนโหลดหน้า
-window.onload = () => {
-  startHack();
-};
