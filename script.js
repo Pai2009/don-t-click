@@ -69,7 +69,7 @@ function showRickroll() {
        <source src="/music/troll-laugh.mp3" type="audio/mpeg">
      </audio>
      <video autoplay controls>
-       <source src="/music/rickroll.mp4" type="video/mp4">
+       <source src="https://youtu.be/dQw4w9WgXcQ?si=nd-NwPpjzVpUcZ_c" type="video/mp4">
        คลิปไม่โหลดเว้ยเพื่อน ลองใหม่ดิ
      </video>
    `;
