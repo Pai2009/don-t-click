@@ -68,10 +68,7 @@ function showRickroll() {
      <audio autoplay>
        <source src="/music/troll-laugh.mp3" type="audio/mpeg">
      </audio>
-     <video autoplay controls>
-       <source src="https://youtu.be/dQw4w9WgXcQ?si=nd-NwPpjzVpUcZ_c" type="video/mp4">
-       คลิปไม่โหลดเว้ยเพื่อน ลองใหม่ดิ
-     </video>
+     <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
    `;
 
   setInterval(() => {
